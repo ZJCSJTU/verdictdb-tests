@@ -33,4 +33,5 @@ df = verdict.sql(query)
 end_time = time.time()
 
 f = open(filename, 'a')
+f.write("scramble            bypass                speed")
 f.write(str(end_time - start_time) + " ")
