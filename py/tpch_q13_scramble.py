@@ -32,4 +32,4 @@ verdict.sql(query)
 end_time = time.time()
 
 f = open(filename, 'a')
-f.write(str(end_time - start_time))
+f.write(str(end_time - start_time) + " ")
