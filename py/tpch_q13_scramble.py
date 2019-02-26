@@ -33,3 +33,27 @@ end_time = time.time()
 
 f = open(filename, 'a')
 f.write(str(end_time - start_time) + " ")
+
+
+query = """bypass select
+        c_count,
+        count(*) as custdist
+from
+        (
+        select
+                c_custkey,
+                count(o_orderkey) as c_count
+        from
+                tpch10g.customer left outer join tpch10g.orders on
+                c_custkey = o_custkey
+        where o_comment not like '%special%requests%'
+        group by
+                c_custkey
+        ) as c_orders
+group by
+        c_count
+order by
+        custdist desc,
+        c_count desc;"""
+
+verdict.sql(query)
