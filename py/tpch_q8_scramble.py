@@ -52,7 +52,7 @@ end_time = time.time()
 time_scramble = end_time - start_time
 
 f = open(filename, 'a')
-f.write(str("8  " + str(time_scramble) + " ")
+f.write("8  " + str(end_time - start_time) + " ")
 
 
 query = """bypass select
