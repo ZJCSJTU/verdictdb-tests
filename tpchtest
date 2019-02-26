@@ -2,7 +2,7 @@
 # tpchtest
 
 # Stop on errors
-set -e
+# set -e
 
 # Sanity check command line options
 usage() {
