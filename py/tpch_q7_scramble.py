@@ -50,9 +50,10 @@ order by
 start_time = time.time()
 verdict.sql(query)
 end_time = time.time()
+time_scramble = end_time - start_time
 
 f = open(filename, 'a')
-f.write(str(end_time - start_time) + " ")
+f.write("7  " + str(end_time - start_time) + " ")
 
 
 query = """bypass select
@@ -95,4 +96,13 @@ order by
         cust_nation,
         l_year;"""
 
+start_time = time.time()
 verdict.sql(query)
+end_time = time.time()
+time_bypass = end_time - start_time
+
+f = open(filename, 'a')
+f.write(str(time_bypass) + " ")
+
+speed = time_bypass / time_scramble
+f.write(str(speed) + "\n")

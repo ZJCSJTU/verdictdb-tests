@@ -23,7 +23,7 @@ case $1 in
       rm $2
     fi
 
-    for i in `seq 1 2`;
+    for i in `seq 1 20`;
     do
       echo "==================================================================="
       echo "Running Test #$i"

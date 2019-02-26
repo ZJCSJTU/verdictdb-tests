@@ -24,9 +24,10 @@ where
 start_time = time.time()
 verdict.sql(query)
 end_time = time.time()
+time_scramble = end_time - start_time
 
 f = open(filename, 'a')
-f.write(str(end_time - start_time) + " ")
+f.write("14 " + str(end_time - start_time) + " ")
 
 
 query = """bypass select
@@ -44,4 +45,13 @@ where
         and l_shipdate >= date '1995-09-01'
         and l_shipdate < date '1995-10-01';"""
 
-df = verdict.sql(query)
+start_time = time.time()
+verdict.sql(query)
+end_time = time.time()
+time_bypass = end_time - start_time
+
+f = open(filename, 'a')
+f.write(str(time_bypass) + " ")
+
+speed = time_bypass / time_scramble
+f.write(str(speed) + "\n")

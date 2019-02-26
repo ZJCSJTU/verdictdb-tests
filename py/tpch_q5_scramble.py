@@ -35,7 +35,7 @@ order by
 start_time = time.time()
 verdict.sql(query)
 end_time = time.time()
-time_sccramble = end_time - start_time
+time_scramble = end_time - start_time
 
 f = open(filename, 'a')
 f.write("5  " + str(end_time - start_time) + " ")
